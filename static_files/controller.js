@@ -12,6 +12,7 @@ function setupGame() {
   document.addEventListener("keydown", moveByKey);
   document.addEventListener("keyup", resetByKey);
   document.addEventListener("visibilitychange", clearMoves);
+  console.log("CONTROLLER.JS")
 
   /* Connect to WebSocket */
   socket = new WebSocket("ws://localhost:10707");
