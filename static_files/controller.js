@@ -17,7 +17,6 @@ function setupGame() {
   socket = new WebSocket("wss://node-royale.herokuapp.com:10707");
   console.log("breakpoint: connected")
   socket.onopen = function (event) {
-    console.log("breakpoint: keydown onopen")
     document.addEventListener("keydown", moveByKey);
 
   };
@@ -27,7 +26,6 @@ function setupGame() {
     alert("Server closed!");
   };
 
-  console.log
   socket.onmessage = function (event) {
     var e = JSON.parse(event.data);
     console.log("breakpoint: onmessage", e.type)
@@ -80,6 +78,7 @@ function clearMoves() {
 }
 
 function moveByKey(event) {
+  console.log("movebykey")
   var key = event.key;
   var moveMap = {
     w: { dx: "default", dy: -1 },
