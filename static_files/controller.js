@@ -18,6 +18,7 @@ function setupGame() {
   console.log("breakpoint: connected")
   socket.onopen = function (event) {
     document.addEventListener("keydown", moveByKey);
+    console.log("breakpoint: keydown onopen")
   };
 
   socket.onclose = function (event) {
@@ -26,6 +27,7 @@ function setupGame() {
 
   socket.onmessage = function (event) {
     var e = JSON.parse(event.data);
+    console.log("breakpoint: onmessage", e.type)
     switch (e.type) {
       case "user":
         stage.cid = e.cid;
