@@ -17,14 +17,17 @@ function setupGame() {
   socket = new WebSocket("wss://node-royale.herokuapp.com:10707");
   console.log("breakpoint: connected")
   socket.onopen = function (event) {
-    document.addEventListener("keydown", moveByKey);
     console.log("breakpoint: keydown onopen")
+    document.addEventListener("keydown", moveByKey);
+
   };
 
+  console.log("breakpoint: body")
   socket.onclose = function (event) {
     alert("Server closed!");
   };
 
+  console.log
   socket.onmessage = function (event) {
     var e = JSON.parse(event.data);
     console.log("breakpoint: onmessage", e.type)
