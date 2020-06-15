@@ -15,6 +15,7 @@ function setupGame() {
 
   /* Connect to WebSocket */
   socket = new WebSocket("wss://node-royale.herokuapp.com:10707");
+  console.log("breakpoint: connected")
   socket.onopen = function (event) {
     document.addEventListener("keydown", moveByKey);
   };
