@@ -366,7 +366,7 @@ var stage = new Stage();
 var cid = 0; // Client ID, to keep track of clients
 
 var WebSocketServer = require("ws").Server,
-  wss = new WebSocketServer({ port: 10707 });
+  wss = new WebSocketServer({ port: 3000 });
 
 var interval = setInterval(function () {
   stage.step();
