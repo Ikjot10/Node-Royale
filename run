@@ -1,4 +1,0 @@
-echo "Express Server (.js) is running on port 10220"
-echo "Websocket (serverModel.js) is running on port 10707"
-node serverModel.js &
-node NodeRoyale.js 10220

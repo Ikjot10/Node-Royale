@@ -1,1 +1,1 @@
-web: node NodeRoyale.js
+web: node server.js

@@ -1,6 +1,31 @@
+'use strict';
+
+const express = require('express');
+const { Server } = require('ws');
+
+const PORT = process.env.PORT || 3000;
+const server = express()
+  .use('/', express.static('static_files/multiplayer/'))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+const wss = new Server({ server });
+
+// wss.on('connection', (ws) => {
+//   console.log('Client connected');
+//   ws.on('close', () => console.log('Client disconnected'));
+// });
+
+// setInterval(() => {
+//   wss.clients.forEach((client) => {
+//     client.send(new Date().toTimeString());
+//   });
+// }, 1000);
+
+/******************** SOCKET CODE ********************/
 function randint(n) {
   return Math.round(Math.random() * n);
 }
+
 function rand(n) {
   return Math.random() * n;
 }
@@ -364,9 +389,6 @@ class Bullet extends Ball {
 
 var stage = new Stage();
 var cid = 0; // Client ID, to keep track of clients
-
-var WebSocketServer = require("ws").Server,
-  wss = new WebSocketServer({ port: 10707 });
 
 var interval = setInterval(function () {
   stage.step();

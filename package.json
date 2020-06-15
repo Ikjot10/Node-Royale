@@ -1,25 +1,21 @@
 {
-  "name": "noderoyale",
+  "name": "socket",
   "version": "1.0.0",
-  "main": "NodeRoyale.js",
+  "description": "Websocket testing",
+  "main": "server.js",
+  "engines": {
+    "node": "12.17.x"
+  },
   "scripts": {
-    "start": "node serverModel.js & node NodeRoyale.js 10220",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "JSON": "^1.0.0",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.4",
+    "bufferutil": "^4.0.1",
     "express": "^4.17.1",
-    "http": "0.0.0",
-    "pg": "^8.2.0",
-    "sqlite3": "^4.1.1",
-    "url": "^0.11.0",
-    "ws": "^7.2.3"
-  },
-  "devDependencies": {},
-  "description": ""
+    "utf-8-validate": "^5.0.2",
+    "ws": "^7.3.0"
+  }
 }
