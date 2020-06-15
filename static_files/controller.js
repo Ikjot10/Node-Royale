@@ -14,7 +14,7 @@ function setupGame() {
   document.addEventListener("visibilitychange", clearMoves);
 
   /* Connect to WebSocket */
-  socket = new WebSocket("ws://node-royale.herokuapp.com:10707");
+  socket = new WebSocket("wss://node-royale.herokuapp.com:10707");
   socket.onopen = function (event) {
     document.addEventListener("keydown", moveByKey);
   };
