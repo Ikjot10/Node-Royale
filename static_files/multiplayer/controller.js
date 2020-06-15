@@ -207,3 +207,33 @@ function hasLost() {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
+// This is executed when the document is ready (the DOM for this document is loaded)
+$(function () {
+    // Display leaderboard
+    populateLeaderboard();
+});
+
+// populate the leaderboard
+function populateLeaderboard() {
+    $.ajax({
+        method: "GET",
+        url: "/ftd/api/leaderboard/",
+    }).done(function (data) {
+        var leaderBoard = "";
+        for (i = 0; i < data["leaders"].length; i++) {
+            leaderBoard +=
+                "<br/>" +
+                data["leaders"][i].userName +
+                "......" +
+                data["leaders"][i].numKills;
+        }
+        $("#leaderboard").html(leaderBoard);
+    });
+}
+
+// Switch to game
+function toGame(serverNum) {
+    sid = serverNum;
+    console.log("Sid chosen as #", sid);
+    setupGame();
+}

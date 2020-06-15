@@ -1,25 +1,23 @@
 'use strict';
 
 const express = require('express');
+var process = require('process');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var routes = require('./routes');
+
 const { Server } = require('ws');
 
 const PORT = process.env.PORT || 3000;
 const server = express()
   .use('/', express.static('static_files/multiplayer/'))
+  .use(cookieParser())
+  .use(bodyParser.json())
+  .use(bodyParser.urlencoded({ extended: true }))
+  .use('/', routes)
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 const wss = new Server({ server });
-
-// wss.on('connection', (ws) => {
-//   console.log('Client connected');
-//   ws.on('close', () => console.log('Client disconnected'));
-// });
-
-// setInterval(() => {
-//   wss.clients.forEach((client) => {
-//     client.send(new Date().toTimeString());
-//   });
-// }, 1000);
 
 /******************** SOCKET CODE ********************/
 function randint(n) {
