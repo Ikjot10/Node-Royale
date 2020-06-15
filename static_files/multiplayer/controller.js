@@ -13,13 +13,10 @@ function setupGame() {
     document.addEventListener("keydown", moveByKey);
     document.addEventListener("keyup", resetByKey);
     document.addEventListener("visibilitychange", clearMoves);
+    document.addEventListener("keydown", moveByKey);
 
     let HOST = location.origin.replace(/^http/, 'ws')
     socket = new WebSocket(HOST);
-
-    socket.onopen = function (event) {
-        document.addEventListener("keydown", moveByKey);
-    };
 
     socket.onclose = function (event) {
         alert("Server closed!");
