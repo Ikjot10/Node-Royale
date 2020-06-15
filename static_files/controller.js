@@ -14,7 +14,7 @@ function setupGame() {
   document.addEventListener("visibilitychange", clearMoves);
 
   /* Connect to WebSocket */
-  socket = new WebSocket("ws://localhost:3000");
+  socket = new WebSocket("ws://localhost:8080");
   socket.onopen = function (event) {
     document.addEventListener("keydown", moveByKey);
   };
