@@ -21,7 +21,7 @@ function setupGame() {
 
   };
 
-  console.log("breakpoint: body")
+  console.log("SOCKET READY STATE:", socket.readyState);
   socket.onclose = function (event) {
     alert("Server closed!");
   };
@@ -78,7 +78,6 @@ function clearMoves() {
 }
 
 function moveByKey(event) {
-  console.log("movebykey")
   var key = event.key;
   var moveMap = {
     w: { dx: "default", dy: -1 },
