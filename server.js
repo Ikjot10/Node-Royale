@@ -10,7 +10,7 @@ const { Server } = require('ws');
 
 const PORT = process.env.PORT || 3000;
 const server = express()
-  .use('/', express.static('static_files/multiplayer/'))
+  .use('/', express.static('static_files/'))
   .use(cookieParser())
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
