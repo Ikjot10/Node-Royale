@@ -196,7 +196,7 @@ class Game extends React.Component {
     return (
       <div id="ui_game">
         <center>
-          <h1>Fortnite</h1>
+          <h1>NodeRoyale</h1>
           <button id="leaveGame" onClick={() => this.leaveGame()}>
             Leave Game
           </button>
@@ -265,7 +265,7 @@ class Profile extends React.Component {
 
         $("#userProfile").val(data.Name);
         $("#emailProfile").val(data.Email);
-        // $("#killStat").text("Total Kills: " + data.numKills + " ");
+        $("#killStat").text("Total Kills: " + data.numKills + " ");
         $("#deathStat").text("Total Deaths: " + data.numDeaths);
         $("#oldpassProfile").val("");
         $("#passProfile").val("");
