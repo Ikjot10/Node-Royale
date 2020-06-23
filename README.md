@@ -1,4 +1,5 @@
 # Node Royale
+https://node-royale.herokuapp.com/
 
 Note: All user passwords are hashed before saved.
 
