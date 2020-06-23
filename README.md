@@ -1,4 +1,4 @@
-# Node-Royale
+# Node Royale
 
 Note: All user passwords are hashed before saved.
 
